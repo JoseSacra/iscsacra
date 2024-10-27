@@ -7,14 +7,14 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js', 
-                'resources/css/slick.css',
+             /*    'resources/css/slick.css',
                 'resources/css/custom.css',
                 'resources/css/tailwind.css',
                 'resources/js/jquary.min.js',
                 'resources/js/slick.js',
                 'resources/js/isotope.pkgd.min.js',
                 'resources/js/jquery.modal.min.js',
-                'resources/js/main.js',
+                'resources/js/main.js', */
             ],
             refresh: true,
         }),
