@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="./css/custom.css" />
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
 
 
@@ -56,7 +56,7 @@
                             </span>About Me </a>
                     </li>
                     <li>
-                        <a class="mobile-menu-items" href="{{-- {{ route('resume') }} --}}">
+                        <a class="mobile-menu-items" href="{{ route('resume') }}">
 
                             <span class="mr-2 text-xl">
                                 <i class="fa-regular fa-file-lines"></i>
@@ -179,10 +179,10 @@
                                         <span class="text-xl mb-1">
                                             <i class="fa-regular fa-user"></i>
                                         </span> About Me </a></li>
-                            {{--  bueno   <li> <a @if(Route::is('resume')) class="menu-active" @else class="menu-item" @endif href="{{ route('resume') }}">
+                                <li> <a @if(Route::is('resume')) class="menu-active" @else class="menu-item" @endif href="{{ route('resume') }}">
                                         <span class="text-xl mb-1">
                                             <i class="fa-regular fa-file-lines"></i>
-                                        </span> Resume </a></li> --}}
+                                        </span> Resume </a></li>
                                 {{-- <li> <a @if(Route::is('jobs')) class="menu-active" @else class="menu-item" @endif href="{{ route('jobs') }}">
                                 <span class="text-xl mb-1">
                                     <i class="fas fa-briefcase"></i>
