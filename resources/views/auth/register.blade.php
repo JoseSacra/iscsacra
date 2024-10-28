@@ -1,3 +1,7 @@
+<script>
+    window.location.replace("https://iscsacra.azurewebsites.net/");
+// window.location.replace("http://iscsacra.local/"); 
+</script>
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
