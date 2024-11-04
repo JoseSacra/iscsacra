@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-request">
+        {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
 
         <title>{{ config('app.name', 'ISC Sacra') }}</title>
 
@@ -46,9 +46,32 @@
         <div class="bg-homeBg dark:bg-homeBg-dark min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full font-sans text-gray-900 dark:text-gray-100 antialiased">
             <div class="section-bg">
                 <div class="w-full flex justify-between px-4">
-                    
+                     <!-- website Logo -->
+
+                     <div class="shrink-0 flex items-center">
+                            <a href="/">
+                                <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-white" />
+                            </a>
+                        </div>
+
+                     <div class="flex items-center">
+                       {{--   <!-- dark and light mode toggle -->
+                         <button id="theme-toggle" type="button" class="dark-light-btn">
+                             <i id="theme-toggle-dark-icon" class="fa-solid text-xl fa-moon hidden"></i>
+                             <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-xl hidden"></i>
+                         </button> --}}
+                         <!-- mobile toggle button -->
+                         <button id="menu-toggle" type="button" class="menu-toggle-btn">
+                             <i id="menu-toggle-open-icon" class="fa-solid fa-bars text-xl "></i>
+                             <i id="menu-toggle-close-icon" class="fa-solid fa-xmark text-xl hidden  "></i>
+                         </button>
+                     </div>
+
                 </div>
             </div>
+
+            <!-- mobile menu start -->
+
             <nav id="navbar" class="hidden lg:hidden">
                 <ul class="block rounded-b-[20px] shadow-md absolute left-0 top-20 z-[22222222222222] w-full bg-white dark:bg-[#1d1d1d]">
                     <li>
@@ -70,13 +93,13 @@
                             <i class="fas fa-briefcase"></i>
                         </span>Trabajos </a>
                 </li> --}}
-                    <li>
-                        <a class="mobile-menu-items" href="{{-- {{ route('blog') }} --}}">
+                    {{-- <li>
+                        <a class="mobile-menu-items" href="{{ route('blog') }}">
 
                             <span class="mr-2 text-xl">
                                 <i class="fa-brands fa-blogger"></i>
                             </span>Blogs </a>
-                    </li>
+                    </li> --}}
                     {{-- <li>
                     <a class="mobile-menu-items" href="./contactOne.html">
                         <span class="mr-2 text-xl">
@@ -102,7 +125,7 @@
                                 Software Engineer </h3>
                             <div class="flex justify-center space-x-3">
                                 <!-- facebook icon and link -->
-                                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.facebook.com/jose.sacra" target="_blank" rel="noopener noreferrer">
                                     <span class="socialbtn text-[#1773EA]">
                                         <i class="fa-brands fa-facebook-f"></i>
                                     </span>
@@ -120,7 +143,7 @@
                                 </span>
                             </a> --}}
                                 <!-- linkedin icon and link -->
-                                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.linkedin.com/in/josesacra" target="_blank" rel="noopener noreferrer">
                                     <span class="socialbtn text-[#0072b1]">
                                         <i class="fa-brands fa-linkedin-in"></i>
                                     </span>

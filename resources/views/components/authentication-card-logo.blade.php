@@ -4,7 +4,6 @@
         <path d="M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z" fill="#6875F5"/>
     </svg> --}}
     <svg version="1.1" id="svg18" width="300" height="297.870773" viewBox="0 0 100 97.870774" sodipodi:docname="logo sacra.svg" inkscape:export-filename="logo sacra2.svg" inkscape:export-xdpi="96" inkscape:export-ydpi="96" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-        <sodipodi:namedview id="namedview71" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" />
         <defs id="defs22">
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath34">
                 <path d="M 0,47 H 49 V 0 H 0 Z" id="path32" />
@@ -47,8 +46,8 @@
                 <feComposite in2="fbSourceGraphic" id="feComposite5469" operator="in" />
             </filter>
         </defs>
-        <g id="g26" transform="matrix(2.1276486,0,0,-2.1276486,-2.1273943,98.934596)" style="filter:invert(100%);fill:#000000;">
-            <g id="g1516" style="mix-blend-mode:darken;fill:#ffffff;fill-opacity:1;stroke-width:0.99975;stroke-dasharray:none;filter:url(#filter5425)">
+        <g id="g26" transform="matrix(2.1276486,0,0,-2.1276486,-2.1273943,98.934596)" style="fill:none;filter:invert(50%);">
+            <g id="g1516" style="fill-opacity:1;stroke-width:0.99975;stroke-dasharray:none;filter:url(#filter5425)">
                 <g id="g28" transform="translate(-1.6309556e-4)" style="fill:#ffffff;fill-opacity:1;stroke-width:0.99975;stroke-dasharray:none">
                     <g id="g30" clip-path="url(#clipPath34)" style="fill:#ffffff;fill-opacity:1;stroke-width:0.99975;stroke-dasharray:none">
                         <g id="g36" transform="translate(41.7465,18.813)" style="fill:#ffffff;fill-opacity:1;stroke-width:0.99975;stroke-dasharray:none">
