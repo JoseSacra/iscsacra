@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/x-icon">
         {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
 
         <title>{{ config('app.name', 'ISC Sacra') }}</title>
@@ -21,15 +22,23 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-        <link rel="stylesheet" href="./css/slick.css"/>
-        <link rel="stylesheet" href="./css/tailwind.css"/>
-        <link rel="stylesheet" href="./css/custom.css" />
+        <link rel="stylesheet" href="{{asset('css/tailwind.css')}}"/>
 
         <!-- Scripts -->
-        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+        <!-- jQuery Modal -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        
+        @vite(['resources/css/app.css',
+         'resources/css/slick.css',
+         'resources/css/slick-theme.css',
+         'resources/css/custom.css',
+         'resources/js/app.js'])
 
 
 
+        
         <!-- Styles -->
         @livewireStyles
 
@@ -42,7 +51,26 @@
             }
 
         </script>
+        {{-- <script type="text/javascript">
+            $(document).on('ready', function() {
+                $(".center").slick({
+                    dots: true
+                    , infinite: true
+                    , centerMode: true
+                    , slidesToShow: 7
+                    , slidesToScroll: 3
+                });
+            });
 
+        </script> --}}
+
+        <!-- Carousel Styles -->
+
+        <script type="module" crossorigin="" src="{{asset('images/slider/styles/index.8457301f.js')}}"></script>
+        <link rel="modulepreload" href="{{asset('images/slider/styles/vendor.4ea4e284.js')}}">
+        <link rel="stylesheet" href="{{asset('images/slider/styles/index.0f26cec9.css')}}">
+
+        <!-- end carousel styles -->
     </head>
     <body>
         <div class="bg-homeBg dark:bg-homeBg-dark min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full font-sans text-gray-900 dark:text-gray-100 antialiased">
@@ -57,21 +85,40 @@
                         </div>
 
                      <div class="flex items-center">
-                       {{--   <!-- dark and light mode toggle -->
+                         <!-- dark and light mode toggle -->
                          <button id="theme-toggle" type="button" class="dark-light-btn">
                              <i id="theme-toggle-dark-icon" class="fa-solid text-xl fa-moon hidden"></i>
                              <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-xl hidden"></i>
-                         </button> --}}
+                         </button>
                          <!-- mobile toggle button -->
                          <button id="menu-toggle" type="button" class="menu-toggle-btn">
                              <i id="menu-toggle-open-icon" class="fa-solid fa-bars text-xl "></i>
                              <i id="menu-toggle-close-icon" class="fa-solid fa-xmark text-xl hidden  "></i>
                          </button>
                      </div>
-
                 </div>
             </div>
-
+<!-- Carousel slider -->
+<div class="swiper swiper-carousel swiper-initialized swiper-horizontal swiper-watch-progress">
+    <div class="swiper-wrapper" style="cursor: grab; transition-duration: 0ms; transform: translate3d(-5380px, 0px, 0px); transition-delay: 0ms;">
+        @foreach($slider as $slide)
+            <div class="swiper-slide" data-swiper-slide-index="{{$slide->id}}" style="transform: translateX(2200%) scale(-1.2); z-index: 3; opacity: 0; transition-duration: 0ms;">
+                <!-- elements with  "swiper-carousel-animate-opacity" class will have animated opacity -->
+                <div class="swiper-carousel-animate-opacity" style="opacity: -2.63; transition-duration: 0ms;">
+                <img src="{{asset('images/slider/'.$slide->image)}}" alt="">
+                <div class="slide-content">
+                    <h2>{{$slide->title}}</h2>
+                    <p>{{$slide->description}}</p>
+                </div>
+                </div>
+            </div>    
+        @endforeach
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  
+  {{-- <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div> --}}
             <!-- mobile menu start -->
 
             <nav id="navbar" class="hidden lg:hidden">
@@ -117,23 +164,21 @@
                 <div class="col-span-12 lg:col-span-4 hidden lg:block h-screen sticky top-44">
                     <div class="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
                         <!-- profile image -->
-                        <img src="{{asset('images/sacra.png')}}" class="w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px]" alt="about" />
-
-
+                        <img src="{{ asset('./images/'.$datos['profile_photo_path'])}}" class="w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px]" alt="" />
                         <div class="pt-[100px] pb-8">
-                            <h2 class="mt-6 mb-1 text-[26px] font-semibold dark:text-white"> Jose Sacramento Muñoz Perez </h2>
+                            <h2 class="mt-6 mb-1 text-[26px] font-semibold dark:text-white">{{$datos['name']}}</h2>
 
                             <h3 class="mb-4 text-[#7B7B7B] inline-block dark:bg-[#1D1D1D] px-5 py-1.5 rounded-lg dark:text-[#A6A6A6]">
-                                Software Engineer </h3>
+                                {{$datos['title']}} </h3>
                             <div class="flex justify-center space-x-3">
                                 <!-- facebook icon and link -->
-                                <a href="https://www.facebook.com/jose.sacra" target="_blank" rel="noopener noreferrer">
+                                <a href="{{$datos['facebook']}}" target="_blank" rel="noopener noreferrer">
                                     <span class="socialbtn text-[#1773EA]">
                                         <i class="fa-brands fa-facebook-f"></i>
                                     </span>
                                 </a>
                                 <!-- twitter icon and link -->
-                                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+                                <a href="{{$datos['twitter']}}" target="_blank" rel="noopener noreferrer">
                                     <span class="socialbtn text-[#1C9CEA]">
                                         <i class="fa-brands fa-twitter"></i>
                                     </span>
@@ -145,7 +190,7 @@
                                 </span>
                             </a> --}}
                                 <!-- linkedin icon and link -->
-                                <a href="https://www.linkedin.com/in/josesacra" target="_blank" rel="noopener noreferrer">
+                                <a href="{{$datos['linkedin']}}" target="_blank" rel="noopener noreferrer">
                                     <span class="socialbtn text-[#0072b1]">
                                         <i class="fa-brands fa-linkedin-in"></i>
                                     </span>
@@ -159,7 +204,7 @@
                                     </span>
                                     <div class="text-left ml-2.5">
                                         <p class="text-xs text-[#44566C] dark:text-[#A6A6A6]"> Phone </p>
-                                        <p class="dark:text-white">+52 474 148 8591</p>
+                                        <p class="dark:text-white">+52{{$datos['phone']}}</p>
                                     </div>
                                 </div>
                                 <div class="flex border-b border-[#E3E3E3] dark:border-[#3D3A3A] py-2.5">
@@ -168,7 +213,7 @@
                                     </span>
                                     <div class="text-left ml-2.5">
                                         <p class="text-xs text-[#44566C] dark:text-[#A6A6A6]"> Email </p>
-                                        <p class="dark:text-white">sacra.isc@hotmail.com</p>
+                                        <p class="dark:text-white">{{$datos['email']}}</p>
                                     </div>
                                 </div>
                                 <div class="flex border-b border-[#E3E3E3] dark:border-[#3D3A3A] py-2.5">
@@ -177,7 +222,7 @@
                                     </span>
                                     <div class="text-left ml-2.5">
                                         <p class="text-xs text-[#44566C] dark:text-[#A6A6A6]"> Address </p>
-                                        <p class="dark:text-white">Jalisco, Mexico</p>
+                                        <p class="dark:text-white">{{$datos['address']}}</p>
                                     </div>
                                 </div>
                                 <div class="flex py-2.5">
@@ -186,9 +231,9 @@
                                     </span>
                                     <div class="text-left ml-2.5">
                                         <p class="text-xs text-[#44566C] dark:text-[#A6A6A6]"> Birthdate </p>
-                                        <p class="dark:text-white">13 March, 1990</p>
+                                        <p class="dark:text-white">{{$datos['birthdate']}}</p>
                                     </div>
-                                </div>
+                                </div>    
                             </div>
                             <!-- personal infomation end-->
                             {{-- <!-- dowanload button -->
@@ -236,24 +281,25 @@
                                 <div class="lg:hidden">
                                     <div class="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
                                         <!-- profile image  -->
-                                        <img src="{{asset('images/sacra.png')}}" class="w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px]" alt="about" />
+                                        <img src="{{asset('.//images/sacra.png')}}" class="w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px]" alt="about" />
 
                                         <div class="pt-[100px] pb-8">
-                                            <h2 class="mt-6 mb-1 text-[26px] font-semibold dark:text-white"> Jose Sacramento Muñoz Perez
-
+                                            <h2 class="mt-6 mb-1 text-[26px] font-semibold dark:text-white"> 
+                                                {{$datos['name']}}
                                             </h2>
                                             <h3 class="mb-4 text-[#7B7B7B] inline-block dark:bg-[#1D1D1D] px-5 py-1.5 rounded-lg dark:text-[#A6A6A6]">
-                                                Software Engineer </h3>
+                                                {{$datos['title']}} 
+                                            </h3>    
 
                                             <div class="flex justify-center space-x-3">
                                                 <!-- facebook icon and link -->
-                                                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                                                <a href="{{$datos['facebook']}}" target="_blank" rel="noopener noreferrer">
                                                     <span class="socialbtn text-[#1773EA]">
                                                         <i class="fa-brands fa-facebook-f"></i>
                                                     </span>
                                                 </a>
                                                 <!-- twitter icon and link -->
-                                                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+                                                <a href="{{$datos['twitter']}}" target="_blank" rel="noopener noreferrer">
                                                     <span class="socialbtn text-[#1C9CEA]">
                                                         <i class="fa-brands fa-twitter"></i>
                                                     </span>
@@ -265,7 +311,7 @@
                                                 </span>
                                             </a> --}}
                                                 <!-- linkedin icon and link -->
-                                                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                                                <a href="{{$datos['linkedin']}}" target="_blank" rel="noopener noreferrer">
                                                     <span class="socialbtn text-[#0072b1]">
                                                         <i class="fa-brands fa-linkedin-in"></i>
                                                     </span>
@@ -280,7 +326,7 @@
                                                     </span>
                                                     <div class="text-left ml-2.5">
                                                         <p class="text-xs text-[#44566C] dark:text-[#A6A6A6]"> Phone </p>
-                                                        <p class="dark:text-white">+52 474 148 8591</p>
+                                                        <p class="dark:text-white">+52 {{$datos['phone']}}</p>
                                                     </div>
                                                 </div>
 
@@ -290,7 +336,7 @@
                                                     </span>
                                                     <div class="text-left ml-2.5">
                                                         <p class="text-xs text-[#44566C] dark:text-[#A6A6A6]"> Email </p>
-                                                        <p class="dark:text-white">sacra.isc@hotmail.com</p>
+                                                        <p class="dark:text-white">{{$datos['email']}}</p>
                                                     </div>
                                                 </div>
 
@@ -300,7 +346,7 @@
                                                     </span>
                                                     <div class="text-left ml-2.5">
                                                         <p class="text-xs text-[#44566C] dark:text-[#A6A6A6]"> Address </p>
-                                                        <p class="dark:text-white">Jalisco, Mexico</p>
+                                                        <p class="dark:text-white">location</p>
                                                     </div>
                                                 </div>
 
@@ -310,7 +356,7 @@
                                                     </span>
                                                     <div class="text-left ml-2.5">
                                                         <p class="text-xs text-[#44566C] dark:text-[#A6A6A6]"> Birthdate </p>
-                                                        <p class="dark:text-white">13 March, 1990</p>
+                                                        <p class="dark:text-white">{{$datos['birthdate']}}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -330,16 +376,12 @@
                                     <div class="col-span-12 space-y-2.5">
                                         <div class="lg:mr-16">
                                             <p class="about-box text-[#44566c] dark:text-color-910 leading-7">
-
-                                                Computer Systems Engineering Intern, interested in Cyber security, software engineering,
-                                                information technologies and robotics, committed to improving day by day through continuous training.
+                                                {{$datos['about']}}
                                             </p>
                                             <h2 class="after-effect after:left-52">Slogan</h2>
 
                                             <p class="about-box text-[#44566c] leading-7 mt-2.5 dark:text-color-910">
-
-
-                                                "Set your course to a star and you can navigate through any storm." - Leonardo da Vinci
+                                                {{$datos['slogan']}}
                                             </p>
                                         </div>
                                         <div></div>
@@ -360,10 +402,6 @@
                         </div>
                     </div>
                     <!-- about me section start -->
-
-
-
-
                 </div>
             </div>
             </div>
@@ -372,15 +410,22 @@
         </div>
 
         <!--==== js =====-->
+ 
+       
+        <script type="text/javascript" src="https://iscsacra.azurewebsites.net/js/slick.js"></script>
 
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-
-        <!-- jQuery Modal -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-        <script src="{{ asset('js/slick.js') }}"></script>
-        <script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
+        <script type="text/javascript" src="https://iscsacra.azurewebsites.net/js/isotope.pkgd.min.js"></script>
+        
         <!-- main js -->
-        <script src="{{ asset('js/main.js') }}"></script>
+        {{-- <script type="text/javascript" src="https://iscsacra.azurewebsites.net/js/main.js"></script>
+ --}}
+
+
+        @vite(['resources/js/main.js',])
+
+
+
+
 
         @livewireScripts
     </body>

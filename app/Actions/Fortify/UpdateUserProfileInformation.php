@@ -19,7 +19,16 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     {
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
+            'title' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255'],
+            'address' => ['required', 'string', 'max:255'],
+            'birthdate' => ['required', 'date', 'max:255'],
+            'facebook' => ['required', 'string', 'max:255'],
+            'twitter' => ['required', 'string', 'max:255'],
+            'linkedin' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
+            'about' => ['required', 'string', 'max:2048'],
+            'slogan' => ['required', 'string', 'max:2048'],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
         ])->validateWithBag('updateProfileInformation');
 
@@ -47,7 +56,16 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     {
         $user->forceFill([
             'name' => $input['name'],
+            'title' => $input['title'],
+            'phone' => $input['phone'],
+            'address' => $input['address'],
+            'birthdate' => $input['birthdate'],
+            'facebook' => $input['facebook'],
+            'twitter' => $input['twitter'],
+            'linkedin' => $input['linkedin'],
             'email' => $input['email'],
+            'about' => $input['about'],
+            'slogan' => $input['slogan'],
             'email_verified_at' => null,
         ])->save();
 

@@ -1,5 +1,124 @@
 <x-guest-layout>
 <div class="pb-12 px-2 sm:px-5 md:px-10 lg:px-14">
+    <h3 class="text-[35px] dark:text-white font-bold font-robotoSlab pb-5"> Development Skills </h3>
+    <div class="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
+        <div class="about-box bg-[#fcf4ff] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> LARAVEL </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> PHP </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> CSS3 </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> JAVASCRIPT </h4>
+            </div>
+        </div>
+
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> HTML5 </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> JAVA </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> C# </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> C++ </h4>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="pb-12 px-2 sm:px-5 md:px-10 lg:px-14">
+    <h3 class="text-[35px] dark:text-white font-bold font-robotoSlab pb-5"> Modeling Skills </h3>
+    <div class="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
+        <div class="about-box bg-[#fcf4ff] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> UML </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> Enterprise Architect </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> Microsoft Visio </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> Microsoft Project </h4>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="pb-12 px-2 sm:px-5 md:px-10 lg:px-14">
+    <h3 class="text-[35px] dark:text-white font-bold font-robotoSlab pb-5"> Design Skills </h3>
+    <div class="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
+        <div class="about-box bg-[#fcf4ff] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> Photoshop </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> Ilustrator </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> Inkscape </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> Corel Draw </h4>
+            </div>
+        </div>
+
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> Autocad </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> Sketchup </h4>
+            </div>
+        </div>
+        <div class="about-box bg-[#fff0f8] dark:bg-transparent">
+            <div class="space-y-2">
+                <h4 class="dark:text-white text-[22px] font-semibold"> Revit </h4>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="pb-12 px-2 sm:px-5 md:px-10 lg:px-14">
     <h3 class="text-[35px] dark:text-white font-bold font-robotoSlab pb-5"> Education </h3>
     <div class="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
         <div class="about-box bg-[#fcf4ff] dark:bg-transparent">
@@ -19,7 +138,7 @@
         <div class="about-box bg-[#fff0f8] dark:bg-transparent">
             <div class="space-y-2">
                 <h3 class="dark:text-white text-[22px] font-semibold"> Instituto Tecnológico Superior de Nochistlán </h3>
-                <h4 class="dark:text-white text-[16px] font-semibold"> Ingeniero en Sistemas Computacionales </h3>
+                <h4 class="dark:text-white text-[16px] font-semibold"> Ingeniero en Sistemas Computacionales </h4>
                     <p class="leading-8 text-gray-lite dark:text-[#A6A6A6]"> 2009 - 2018 </p>
                     <p class="leading-8 text-gray-lite dark:text-[#A6A6A6]"> This institution is where I completed my undergraduate studies with a specialty
                         in software engineering, during which I learned the process for software development, the activities in which I participated, a creativity
@@ -28,7 +147,10 @@
                         I participated in a Windows Server 2008 Certification course in which I obtained the Certifications
                         6420: Fundamentals of Windows Server 2008 Network Infrastructure and Application Platform and
                         6421: Configuring and Troubleshooting a Windows Server 2008 Network Infrastructure </p>
-
+            </div>    
+        </div>
+    </div>
+</div>
 
 
 </x-guest-layout>

@@ -59,6 +59,47 @@
             <x-input-error for="name" class="mt-2" />
         </div>
 
+        <!-- phone -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="phone" value="{{ __('phone') }}" />
+            <x-input id="phone" type="text" class="mt-1 block w-full" wire:model="state.phone" required autocomplete="phone" />
+            <x-input-error for="phone" class="mt-2" />
+        </div>
+
+        <!-- address -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="address" value="{{ __('address') }}" />
+            <x-input id="address" type="text" class="mt-1 block w-full" wire:model="state.address" required autocomplete="address" />
+            <x-input-error for="address" class="mt-2" />
+        </div>
+        <!-- birthdate -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="birthdate" value="{{ __('birthdate') }}" />
+            <x-input id="birthdate" type="date" class="mt-1 block w-full" wire:model="state.birthdate" required autocomplete="birthdate" />
+            <x-input-error for="birthdate" class="mt-2" />
+        </div>
+
+        <!-- facebook -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="facebook" value="{{ __('facebook') }}" />
+            <x-input id="facebook" type="text" class="mt-1 block w-full" wire:model="state.facebook" required autocomplete="facebook" />
+            <x-input-error for="facebook" class="mt-2" />
+        </div>
+
+        <!-- twitter -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="twitter" value="{{ __('twitter') }}" />
+            <x-input id="twitter" type="text" class="mt-1 block w-full" wire:model="state.twitter" required autocomplete="twitter" />
+            <x-input-error for="twitter" class="mt-2" />
+        </div>
+
+        <!-- linkedin -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="linkedin" value="{{ __('linkedin') }}" />
+            <x-input id="linkedin" type="text" class="mt-1 block w-full" wire:model="state.linkedin" required autocomplete="linkedin" />
+            <x-input-error for="linkedin" class="mt-2" />
+        </div>
+
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="email" value="{{ __('Email') }}" />

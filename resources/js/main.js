@@ -339,6 +339,33 @@
     // slick slider active function
 
     slickActive: function () {
+      if ($(".center").length !== 0) {
+        $('.center').slick({
+          centerMode: true,
+          centerPadding: '10px',
+          slidesToShow: 3,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '10px',
+                slidesToShow: 3
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '10px',
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
+      }
       if ($(".slickOne").length !== 0) {
         $(".slickOne").slick({
           slidesToShow: 2,

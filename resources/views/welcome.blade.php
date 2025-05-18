@@ -14,37 +14,39 @@
     </div> --}}
 
 <!-- slider -->
+
 <div class="px-2 sm:px-5 md:px-5 lg:px-5">
-    <div class="bg-[#F8FBFB] dark:bg-[#0D0D0D] max-w-full h-auto py-10 rounded-xl">
+    {{--<div class="bg-[#F8FBFB] dark:bg-[#0D0D0D] max-w-full h-auto py-10 rounded-xl">
         <h3 class="text-center dark:text-white text-6xl mb-3 font-semibold"> Achievements </h3>
+  
 
-        <!-- slider and slider items -->
-        <div class="slickOne text-center {{-- px-2 pt-8 --}}">
-            <div>
-                <img class="overflow-hidden brand-img" src="{{asset('images/slider/Diploma CBTA.jpeg')}}" alt="brand icon" />
+        <section class="center slider">
+             <div>
+                <img class="overflow-hidden brand-img" src="{{asset('.//images/slider/Diploma CBTA.jpeg')}}" alt="brand icon" />
             </div>
             <div>
-                <img class="overflow-hidden brand-img" src="{{asset('images/slider/Ingeniero de Software.jpeg')}}" alt="brand icon" />
+                <img class="overflow-hidden brand-img" src="{{asset('.//images/slider/Ingeniero de Software.jpeg')}}" alt="brand icon" />
             </div>
             <div>
-                <img class="overflow-hidden brand-img" src="{{asset('images/slider/6421WindowsServer.jpeg')}}" alt="brand icon" />
+                <img class="overflow-hidden brand-img" src="{{asset('.//images/slider/6421WindowsServer.jpeg')}}" alt="brand icon" />
             </div>
             <div>
-                <img class="overflow-hidden brand-img" src="{{asset('images/slider/Privacidad Datos.jpg')}}" alt="brand icon" />
+                <img class="overflow-hidden brand-img" src="{{asset('.//images/slider/Privacidad Datos.jpg')}}" alt="brand icon" />
             </div>
             <div>
-                <img class="overflow-hidden brand-img" src="{{asset('images/slider/Iso27001.jpg')}}" alt="brand icon" />
+                <img class="overflow-hidden brand-img" src="{{asset('.//images/slider/Iso27001.jpg')}}" alt="brand icon" />
             </div>
             <div>
-                <img class="overflow-hidden brand-img" src="{{asset('images/slider/ESET Gestion incidentes.png')}}" alt="brand icon" />
+                <img class="overflow-hidden brand-img" src="{{asset('.//images/slider/ESET Gestion incidentes.png')}}" alt="brand icon" />
             </div>
             <div>
-                <img class="overflow-hidden brand-img" src="{{asset('images/slider/Ciberseguridad Seguriadad0.png')}}" alt="brand icon" />
-            </div>
+                <img class="overflow-hidden brand-img" src="{{asset('.//images/slider/Ciberseguridad Seguriadad0.png')}}" alt="brand icon" />
+            </div> 
 
-        </div>
+        </section>
+
         <!-- slider and slider items end -->
-    </div>
+    </div>--}}
 </div>
 
 
@@ -53,7 +55,7 @@
     <h3 class="text-[35px] dark:text-white font-bold font-robotoSlab pb-5"> What I Do? </h3>
     <div class="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
         <div class="about-box bg-[#fcf4ff] dark:bg-transparent">
-            <img class="w-10 h-10 object-contain block" src="{{asset('images/icons/icon.svg')}}" alt="icon" />
+            <img class="w-10 h-10 object-contain block" src="{{asset('.//images/icons/icon.svg')}}" alt="icon" />
             <div class="space-y-2">
                 <h3 class="dark:text-white text-[22px] font-semibold"> Web Development </h3>
                 <p class="leading-8 text-gray-lite dark:text-[#A6A6A6]"> Development of custom websites to increase the promotion of products and services, thereby making them available to all consumers and increasing sales and customer service. </p>
@@ -93,7 +95,7 @@ alt="icon" />
 </div> --}}
 
 <div class="about-box bg-[#fff0f8] dark:bg-transparent">
-    <img class="w-10 h-10 object-contain block" src="{{asset('images/icons/icon4.svg')}}" alt="icon" />
+    <img class="w-10 h-10 object-contain block" src="{{asset('.//images/icons/icon4.svg')}}" alt="icon" />
     <div class="space-y-2">
         <h3 class="dark:text-white text-[22px] font-semibold"> Consulting and Technical Support </h3>
 
