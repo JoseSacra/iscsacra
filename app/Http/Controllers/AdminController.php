@@ -115,6 +115,7 @@ class AdminController extends Controller
     {
         $datos= $request->all();
         $slider = Slider::find($id);
+
         if (!$slider) {
             return redirect()->back()->with('error', 'Slider not found.');
         }else{
@@ -128,7 +129,12 @@ class AdminController extends Controller
             $slider->title = $datos['title'];
             $slider->description = $datos['description'];
             $slider->order = 0;
-            $slider->status = 1;
+            if($datos['status'] == 1){
+                $slider->status = 1;
+            }else{
+                $slider->status = 0;
+            }
+            
 
         }
         

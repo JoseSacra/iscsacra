@@ -198,9 +198,10 @@
                         @foreach ($sliders as $slider)
                         <tr>
                             <td>{{ $slider->id }}</td>
-                            <td>{{ $slider->title }}</td>
-                            <td>{{ $slider->description }}</td>
-                            <td><img src="{{ asset('images/slider/'.$slider->image) }}" alt="{{ $slider->title }}" class="rounded-full object-cover" width="50"></td>
+                            <td><textarea class="form-control p-2" id="floatingTextarea2" name="title" rows="3" cols="50">{{ $slider->title }}</textarea></td>
+                            <td>
+                                <textarea class="form-control p-2" id="floatingTextarea2" name="description" rows="3" cols="50">{{ $slider->description }}</textarea></td>
+                            <td><img src="{{ asset('images/slider/'.$slider->image) }}" alt="{{ $slider->title }}" class="rounded-full object-cover" width="60"></td>
                             <td>
                                 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal{{$slider->id}}">
                                     Edit
@@ -230,6 +231,20 @@
                                                         @error('description')
                                                         <p class='text-danger inputerror'>{{ $message }} </p>
                                                         @enderror
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="status" class="form-label">Status</label>
+                                                        @if($slider->status == 1)
+                                                        <select name="status" class="form-control border p-2" id="status">
+                                                            <option value="1" selected>Active</option>
+                                                            <option value="0">Inactive</option>
+                                                        </select>
+                                                        @else
+                                                        <select name="status" class="form-control border p-2" id="status">
+                                                            <option value="0" selected>Inactive</option>
+                                                            <option value="1">Active</option>
+                                                        </select>
+                                                        @endif
                                                     </div>
                                                     <div class="mb-3">
                                                         <img src="{{ asset('images/slider/'.$slider->image) }}" alt="{{ $slider->title }}" class="rounded-full object-cover" width="50">
