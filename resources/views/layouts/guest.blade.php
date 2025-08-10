@@ -55,7 +55,7 @@
             <h2 class="text-4xl font-bold mb-4">¡Hola! Soy {{$sacra->name}}</h2>
             <h3 class="text-xl mb-6">{{$sacra->title}}</h3>
             <p class="text-xl mb-6">{{$sacra->slogan}}</p>
-            <a href="#contact" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Contáctame</a>
+            {{-- <a href="#contact" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Contáctame</a> --}}
             
         </div>
     </section>

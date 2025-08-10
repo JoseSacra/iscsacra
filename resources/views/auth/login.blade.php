@@ -18,7 +18,7 @@
      <script type="text/javascript" src="https://iscsacra.azurewebsites.net/build/assets/app-z-Rg4TxU.js"></script>
      <!-- Styles -->
 
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Styles -->
     @livewireStyles

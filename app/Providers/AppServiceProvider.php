@@ -20,7 +20,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //descomentar antes de subir a git
-        //Url::forceScheme('https');
+        /* if (app()->environment('production')) {
+            Url::forceScheme('https');
+        } */
     }
 }
