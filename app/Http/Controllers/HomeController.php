@@ -21,12 +21,12 @@ class HomeController extends Controller
         // Obtenemos las skills por categoria
         $languages = Skills::all()->where('category', 'lenguaje')->sortBy('order');
         $systems = Skills::all()->where('category', 'sistema Operativo')->sortBy('order');
-        $softskills = Skills::all()->where('category', 'habilidades blandas')->sortBy('order');
+        $softskills = Skills::all()->where('category', 'blandas')->sortBy('order');
         $cibersecurity = Skills::all()->where('category', 'ciberseguridad')->sortBy('order');
         $frameworks = Skills::all()->where('category', 'framework')->sortBy('order');
         $databases = Skills::all()->where('category', 'base de datos')->sortBy('order');
-        $tools = Skills::all()->where('category', 'tool')->sortBy('order');
-        $design = Skills::all()->where('category', 'diseño')->sortBy('order');
+        $tools = Skills::all()->where('category', 'herramienta')->sortBy('order');
+        $design = Skills::all()->where('category', 'design')->sortBy('order');
         $office = Skills::all()->where('category', 'ofimatica')->sortBy('order');
         // Compartimos los datos con las vistas
         view()->share('frameworks', $frameworks);

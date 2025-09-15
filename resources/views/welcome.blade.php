@@ -110,28 +110,16 @@
                             $school_end_date = "Presente";
                         }else{
                             $schoolendDate = date_create($school->end_date);
-                            $school_end_date = date_format($schoolendDate,'M Y');
+                            $school_end_date = date_format($schoolendDate,'Y');
                         }
                     @endphp
                         <div class="bg-white p-6 rounded-lg shadow-md min-h-56">
                             <h3 class="text-xl font-semibold">{{$school->degree}}</h3>
                             <p class="text-gray-600">{{$school->institution}}</p>
-                            <p class="mt-2 text-gray-700">{{$school->location." | ".date_format($schoolstartDate,'M Y')." - ".$school_end_date}}
+                            <p class="mt-2 text-gray-700">{{$school->location." | ".date_format($schoolstartDate,'Y')." - ".$school_end_date}}
                             <p class="mt-2 text-gray-700">{{$school->description}}</p>
                         </div>
                     @endforeach
-                    <div class="bg-white p-6 rounded-lg shadow-md min-h-56">
-                        <h3 class="text-xl font-semibold">Técnico en Informática</h3>
-                        <p class="text-gray-600">Centro de Bachillerato Tecnológico Agropecuario </p>
-                        <p class="mt-2 text-gray-700">Yahualica Jal. | 2005 - 2008</p>
-                        <p class="mt-2 text-gray-700">Mantenimiento preventivo y correctivo a equipos de computo.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md min-h-56">
-                        <h3 class="text-xl font-semibold">Diplomado en Computación</h3>
-                        <p class="text-gray-600">Centro de Computación Avanzada y Sistemas </p>
-                        <p class="mt-2 text-gray-700">Nochistlán Zac. | Feb 2005 - Ago 2005</p>
-                        <p class="mt-2 text-gray-700">Manejo de Microsoft Office.</p>
-                    </div>
                 </div>
             </div>
         </section>
