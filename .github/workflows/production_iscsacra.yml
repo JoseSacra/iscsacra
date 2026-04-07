@@ -15,30 +15,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  laravel-tests:
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.5'
-      - uses: actions/checkout@v4
-      - name: copy .env.example to .env
-        run: cp .env.example .env
-      - name: Install dependencies  
-        run: composer install --prefer-dist --no-progress
-      - name: Generate application key
-        run: php artisan key:generate
-      - name: directory permissions
-        run: sudo chmod -R 777 storage bootstrap/cache
-      - name: create database
-        run: mkdir -p /tmp/database && touch /tmp/database/database.sqlite
-      - name: execute tests
-        env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: /tmp/database/database.sqlite
-        run: php artisan test
 
   build:
     runs-on: ubuntu-latest
@@ -52,6 +28,9 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.5'
+    
+      - name: copy .env.example to .env
+        run: cp .env.example .env
 
       - name: Check if composer.json exists
         id: check_files
@@ -63,6 +42,18 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'true'
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
 
+      - name: Generate application key
+        run: php artisan key:generate
+
+      - name: directory permissions
+        run: sudo chmod -R 777 storage bootstrap/cache
+      - name: create database
+        run: mkdir -p /tmp/database && touch /tmp/database/database.sqlite
+      - name: execute tests
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: /tmp/database/database.sqlite
+        run: php artisan test
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
