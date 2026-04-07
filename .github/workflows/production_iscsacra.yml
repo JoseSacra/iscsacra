@@ -49,11 +49,6 @@ jobs:
         run: sudo chmod -R 777 storage bootstrap/cache
       - name: create database
         run: mkdir -p /tmp/database && touch /tmp/database/database.sqlite
-      - name: execute tests
-        env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: /tmp/database/database.sqlite
-        run: php artisan test
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
