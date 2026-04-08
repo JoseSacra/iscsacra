@@ -6,16 +6,10 @@ name: Build and deploy PHP app to Azure Web App - iscsacra
 on:
   push:
     branches:
-      - sacra
-      - Production
-  pull_request:
-    branches:
-      - sacra
       - Production
   workflow_dispatch:
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     permissions:
@@ -28,9 +22,6 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.5'
-    
-      - name: copy .env.example to .env
-        run: cp .env.example .env
 
       - name: Check if composer.json exists
         id: check_files
@@ -42,13 +33,6 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'true'
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
 
-      - name: Generate application key
-        run: php artisan key:generate
-
-      - name: directory permissions
-        run: sudo chmod -R 777 storage bootstrap/cache
-      - name: create database
-        run: mkdir -p /tmp/database && touch /tmp/database/database.sqlite
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -72,9 +56,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_5D99F8934DBC4DE1B9A097955D3A4C16 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_46C8A7495E6F4146B40497BE5C2C16CC }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1252EF01CEAC4BA28CB5F8F01766AE71 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_72430157F1074D7BA96919B7B2883224 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F9A8DA0764804630B11299AF11691C29 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6F3A3E104E2145F6B9750EAA96918F1F }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
